@@ -1,5 +1,5 @@
-val fragments = ["h","he","li","be","b","c","n","o","f","ne","na","mg"];
-
+val fragments = ["he","li","be","b","c","n","o","f","ne","na","mg","eco"];
+val words = ["cobebo", "liconaneh", "fonenaco", "beco", "helibheco"]
 
 structure StringKey =
 struct
@@ -24,7 +24,11 @@ fun organize ([], m) = m | organize (x::xs, m) = organize(xs,
 	end
 );
 
+fun verifica (word, frgs, i) = true;
 
 val f_map = organize(fragments, SMap.empty);
-SSet.listItems(valOf(SMap.find(f_map, "h")));
+SSet.listItems(valOf(SMap.find(f_map, "n")));
 
+fun split("", m) = m | split(word, m) = split(String.extract(word, 1, NONE), valOf(SMap.find(f_map, "n"))::m);
+
+List.filter (fn w => verifica(w, split(w, []), 0)) words;
