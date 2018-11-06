@@ -1,3 +1,6 @@
+(* Leitura e escrita de arquivos *)
+(* https://learnxinyminutes.com/docs/standard-ml/ *)
+
 fun read(filename) =
     let val file = TextIO.openIn filename
         val content = TextIO.inputAll file
@@ -11,18 +14,23 @@ fun write_results(filename, results) =
     in TextIO.closeOut(file)
     end
 
+
+
 fun clean array = List.filter (fn w => List.all Char.isAscii (String.explode(w))) array
 fun lower array = map (fn x => String.implode (map (fn y => Char.toLower(y)) (String.explode x))) array
 
 val fragments = lower (clean (read "fragments.txt"))
 val words = lower (clean (read "words.txt"))
 
+
+(* Utilização de estruturas Map e Set *)
+(* https://www.it.uu.se/edu/course/homepage/funpro/ht07/handout/f10-stdlib.html *)
+
 structure StringKey =
 struct
     type ord_key = string
     val compare = String.compare
 end
-
 
 structure SMap = RedBlackMapFn(StringKey)
 structure SSet = RedBlackSetFn(StringKey)
@@ -38,6 +46,16 @@ fun organize_fragments ([], m) = m | organize_fragments (x::xs, m) = organize_fr
 	end
 )
 
+
+(* Utilização de referência, atribuição e deferência *)
+(* https://learnxinyminutes.com/docs/standard-ml/ *)
+
+(* Sintaxe de operadores *)
+(* http://rigaux.org/language-study/syntax-across-languages-per-language/SML.html *)
+
+(* Uso do while *)
+(* https://stackoverflow.com/questions/7548139/sml-nj-while-loop *)
+(* http://homepages.inf.ed.ac.uk/stg/NOTES/node87.html *)
 
 fun match(word, frgs, i) =
     let
@@ -59,6 +77,10 @@ fun match(word, frgs, i) =
         end;
     !found
     end
+
+
+(* Demais operadores *)
+(* http://sml-family.org/Basis/overview.html *)
 
 val f_map = organize_fragments(fragments, SMap.empty)
 
