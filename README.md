@@ -19,15 +19,22 @@ d. [2 pt] função que determina se a palavra pode ser verificada. - **OK**
 e. [1 pt] manter repositório privado com tarefas - **OK**
 
 f. [1 pt] listar ao menos cinco referências consultadas - **OK**
+
 Indicadas no código fonte em comentário (livros, vídeos, manuais, StackOverflow etc)
 
+
 g. [1 pt] utilizar funções de alta ordem (filter, map, fold etc) - **OK**
+
 Processar blocos utilizando corretamente funções de alta ordem.
 
+
 h. [1 pt] utilizar tipos de dados (datatype) - **Ver notas [1]**
+
 Criar tipos de dados para representar blocos.
 
+
 i. [1 pt] comprovar otimização por uso de paralelismo. - **Ver notas [2]**
+
 Demonstrar aceleração com testes de desempenho (tempo de processamento, uso de processador).
 
 
