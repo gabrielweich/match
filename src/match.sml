@@ -1,3 +1,11 @@
+(*
+    Autor: Gabriel Weich
+    Linguagem: Standard ML of New Jersey v110.84
+    Data: 06/11/2018
+*)
+
+
+
 (* Leitura e escrita de arquivos *)
 (* https://learnxinyminutes.com/docs/standard-ml/ *)
 
