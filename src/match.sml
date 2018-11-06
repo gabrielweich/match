@@ -25,6 +25,7 @@ val words = lower (clean (read "words.txt"))
 
 (* Utilização de estruturas Map e Set *)
 (* https://www.it.uu.se/edu/course/homepage/funpro/ht07/handout/f10-stdlib.html *)
+(* http://www.cs.cornell.edu/courses/cs312/2007fa/recitations/rec09.html *)
 
 structure StringKey =
 struct
