@@ -11,10 +11,11 @@ fun write_results(filename, results) =
     in TextIO.closeOut(file)
     end
 
+fun clean array = List.filter (fn w => List.all Char.isAscii (String.explode(w))) array
 fun lower array = map (fn x => String.implode (map (fn y => Char.toLower(y)) (String.explode x))) array
 
-val fragments = lower (read "fragments.txt")
-val words = lower (read "words.txt")
+val fragments = lower (clean (read "fragments.txt"))
+val words = lower (clean (read "words.txt"))
 
 structure StringKey =
 struct
